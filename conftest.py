@@ -1,5 +1,13 @@
+import os
+
 import pytest
 from playwright.sync_api import Playwright
+
+try:
+    PASSWORD = os.environ['PASSWORD']
+except KeyError:
+    import utils.secret_config
+    PASSWORD = utils.secret_config.PASSWORD
 
 # @pytest.fixture(scope="function")
 # def set_up(browser):
@@ -43,7 +51,7 @@ def login_set_up(set_up):
     page = set_up
 
     page.locator("[data-test=\"username\"]").fill("standard_user")
-    page.locator("[data-test=\"password\"]").fill("secret_sauce")
+    page.locator("[data-test=\"password\"]").fill(PASSWORD)
     page.locator("[data-test=\"login-button\"]").click()
 
     yield page
