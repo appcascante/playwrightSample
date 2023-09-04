@@ -1,1 +1,0 @@
-PASSWORD = "secret_sauce"
