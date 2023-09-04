@@ -3,7 +3,7 @@ import os
 import pytest
 from playwright.sync_api import Playwright, expect
 
-import utils.secret_config
+# import utils.secret_config
 from pom.home_page_elements import HomePage
 
 

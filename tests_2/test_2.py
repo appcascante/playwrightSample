@@ -3,8 +3,8 @@ import os
 import pytest
 from playwright.sync_api import Playwright, expect
 
-import utils.secret_config
-from pom.home_page_elements import HomePage
+# import utils.secret_config
+from pom.home_pagaitge_elements import HomePage
 
 
 @pytest.mark.smoke
