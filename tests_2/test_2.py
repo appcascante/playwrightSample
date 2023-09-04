@@ -1,3 +1,5 @@
+import os
+
 import pytest
 from playwright.sync_api import Playwright, expect
 
@@ -11,7 +13,8 @@ def test_login_then_logout(set_up) -> None:
     page = set_up
 
     page.locator("[data-test=\"username\"]").fill("standard_user")
-    page.locator("[data-test=\"password\"]").fill(utils.secret_config.PASSWORD)
+    # page.locator("[data-test=\"password\"]").fill(utils.secret_config.PASSWORD)
+    page.locator("[data-test=\"password\"]").fill(os.environ['PASSWORD'])
     page.locator("[data-test=\"login-button\"]").click()
     page.get_by_role("button", name="Open Menu").click()
     page.get_by_role("link", name="Logout").click()
