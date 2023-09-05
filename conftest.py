@@ -20,7 +20,7 @@ def set_up(page):
 
 @pytest.fixture(scope='session')
 def context_creation(playwright):
-    browser = playwright.chromium.launch(headless=False, slow_mo=300)
+    browser = playwright.chromium.launch(headless=True, slow_mo=300)
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://symonstorozhenko.wixsite.com/website-1")
