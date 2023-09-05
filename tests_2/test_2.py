@@ -25,6 +25,7 @@ def test_check_copyright(login_set_up) -> None:
     # page.locator("[data-test=\"login-button\"]").click()
     # page.get_by_text("© 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy").click()
 
+    expect(home_page.login_button).to_be_hidden()
     expect(home_page.copyright).to_be_visible()
     # assert page.is_visible(home_page.copyright)
 
@@ -40,6 +41,7 @@ def test_check_header(login_set_up) -> None:
     # page.locator("[data-test=\"password\"]").fill("secret_sauce")
     # page.locator("[data-test=\"login-button\"]").click()
 
+    expect(home_page.login_button).to_be_hidden()
     expect(home_page.header_welcome).to_be_visible()
     expect(home_page.header_note).to_be_visible()
 
