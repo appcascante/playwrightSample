@@ -1,3 +1,4 @@
 /utils/secret_config.py
 /venv/
 *.env
+state.json
